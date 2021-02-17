@@ -13,6 +13,9 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 }
 
 int main(){
-    HWND window = LWinAPI::LCreateWindow("Window Title", 800, 600, GetModuleHandle(0), WndProc);
-    LWinAPI::WindowMessageLoop(window);
+    HWND window = LWinAPI::LCreateWindow("Title", 700, 500, GetModuleHandle(0), WndProc);
+    
+    while (LWinAPI::WindowOpen(window)){
+        LWinAPI::WindowMessageLoop(window);
+    }
 }

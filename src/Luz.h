@@ -28,7 +28,6 @@ namespace LuzMath{
     }
 }
 
-
 namespace LWinAPI{
 
     // Returns 0 when the window could not be found, otherwise returns a handle to the process matched by the window title.
@@ -78,15 +77,16 @@ namespace LWinAPI{
 
     // Initiates the message loop, customise in the WNDPROC function. Ensure this function is called last
     int WindowMessageLoop(HWND hWindow){
-       MSG msg;
-
-        
-       while (GetMessage(&msg, hWindow, 0, 0)){
-           TranslateMessage(&msg);
-           DispatchMessage(&msg);
-       };
-
+         MSG msg;
+        GetMessage(&msg, hWindow, 0, 0);
+        TranslateMessage(&msg);
+        DispatchMessage(&msg);
+    
        return 0; 
+    }
+
+    bool WindowOpen(HWND window){
+        return IsWindow(window);
     }
 
     namespace DrawWindowBG{
@@ -111,6 +111,6 @@ namespace LWinAPI{
     }
 }
 
-namespace Sorts{
-    
+namespace Sorts{   
 }
+
