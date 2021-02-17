@@ -89,6 +89,15 @@ namespace LWinAPI{
         return IsWindow(window);
     }
 
+    
+    namespace Widgets{
+        // Return Window Handle for a button
+        HWND LCreateButton(HWND parentWindow, HINSTANCE hInstance, const char* ButtonText, int x, int y){
+            return CreateWindowA((LPCSTR)"Button", (LPCSTR)ButtonText, (WS_TABSTOP | WS_VISIBLE | WS_CHILD | BS_DEFPUSHBUTTON), x, y, 100, 30, parentWindow, NULL, hInstance, NULL);
+        }
+    }
+
+
     namespace DrawWindowBG{
     
         // Background White

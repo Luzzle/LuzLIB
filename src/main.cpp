@@ -14,7 +14,8 @@ LRESULT CALLBACK WndProc(HWND hwnd, UINT uMsg, WPARAM wParam, LPARAM lParam){
 
 int main(){
     HWND window = LWinAPI::LCreateWindow("Title", 700, 500, GetModuleHandle(0), WndProc);
-    
+    HWND btn = LWinAPI::Widgets::LCreateButton(window, GetModuleHandle(0), "Button", 20, 20);
+    ShowWindow(label, 1);
     while (LWinAPI::WindowOpen(window)){
         LWinAPI::WindowMessageLoop(window);
     }
